@@ -60,7 +60,7 @@ class Write
 
         foreach (T element in input)
         {
-            Console.Write($"{element} ");
+            Console.Write($"{element}, ");
         }
         Console.WriteLine();
     }    

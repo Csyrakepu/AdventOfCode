@@ -6,7 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        var output = Day1.Part2();
+        var output = Day4.Part2();
 
         Console.WriteLine(output);        
     }    
