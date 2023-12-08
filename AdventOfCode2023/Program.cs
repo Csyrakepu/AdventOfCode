@@ -1,6 +1,4 @@
-﻿using AdventOfCode2023;
-
-namespace AdventOfCode2022;
+﻿namespace AdventOfCode2023;
 
 class Program
 {

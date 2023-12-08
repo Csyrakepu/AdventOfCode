@@ -16,11 +16,7 @@ class Day4
         int sum = 0;
         foreach (string game in games)
         {
-            string numbers = game.Split(":")[1];
-            int[] winningNumbers = numbers.Split('|')[0].Split(' ').Where(n => n != "").Select(int.Parse).ToArray();
-            int[] playerNumbers = numbers.Split('|')[1].Split(' ').Where(n => n != "").Select(int.Parse).ToArray();
-
-            int numberOfCommonNumbers = winningNumbers.Count(n => playerNumbers.Contains(n));
+            int numberOfCommonNumbers = GetNumberOfCommons(game);
             sum += CalculateGameScore(numberOfCommonNumbers);
         }
         return sum;
@@ -28,20 +24,29 @@ class Day4
 
     public static int Part2()
     {
-        return 0;
+        string[] games = Source.GetSourceSampleLines(4, 2);
+        int[] gameCounts = new int[games.Length].Select(_ => 1).ToArray();
+
+        for (int currentGameId = 0; currentGameId < games.Length; currentGameId++)
+        {
+            
+        }
+        return gameCounts.Sum();
+    }
+
+    static int GetNumberOfCommons(string game)
+    {
+        string numbers = game.Split(":")[1];
+        int[] winningNumbers = numbers.Split('|')[0].Split(' ').Where(n => n != "").Select(int.Parse).ToArray();
+        int[] playerNumbers  = numbers.Split('|')[1].Split(' ').Where(n => n != "").Select(int.Parse).ToArray();
+
+        return winningNumbers.Count(n => playerNumbers.Contains(n));
     }
 
     static int CalculateGameScore(int commonNumbers)
     {
         if (commonNumbers == 0) { return 0; }
-
-        int result = 1;
-        while (commonNumbers > 1)
-        {
-            result = result * 2;
-            commonNumbers--;
-        }
-        return result;
+        return (int)Math.Pow(2, commonNumbers - 1);
     }
 
 }
