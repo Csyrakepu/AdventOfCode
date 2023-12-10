@@ -4,9 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        var output = Day4.Part2();
-
-        Console.WriteLine(output);        
-    }    
+        var output = Day9.Part1();
+        Console.WriteLine(output);
+    }
 }
 

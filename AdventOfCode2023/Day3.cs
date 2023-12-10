@@ -1,12 +1,4 @@
-﻿using AdventOfCode2022;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdventOfCode2023;
+﻿namespace AdventOfCode2023;
 class Day3
 {
     public static int Part1()
@@ -15,8 +7,8 @@ class Day3
 
         List<Number> numbers = new List<Number>();
         List<Symbol> symbols = new List<Symbol>();
-        CreateObjects(lines, numbers, symbols);        
-        return numbers.Sum(number => number.GetPartNumber(symbols));        
+        CreateObjects(lines, numbers, symbols);
+        return numbers.Sum(number => number.GetPartNumber(symbols));
     }
 
     public static int Part2()
@@ -88,7 +80,7 @@ class Number
 
     public bool IsAdjacent(Symbol symbol)
     {
-        List<int> possibleLines = new List<int>{ line, line + 1, line - 1 };
+        List<int> possibleLines = new List<int> { line, line + 1, line - 1 };
         List<int> possibleColumns = Enumerable.Range(start - 1, length + 2).ToList();
         return possibleLines.Contains(symbol.line) && possibleColumns.Contains(symbol.column);
     }

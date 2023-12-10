@@ -6,7 +6,7 @@ class Program
     {
         var output = Day5.Part1();
 
-        Console.WriteLine(output);        
-    }    
+        Console.WriteLine(output);
+    }
 }
 

@@ -1,12 +1,4 @@
-﻿using AdventOfCode2022;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdventOfCode2023;
+﻿namespace AdventOfCode2023;
 
 class Day1
 {
@@ -43,12 +35,12 @@ class Day1
             }
         }
         string outputAsString = numberList[0] + numberList[^1];
-        return int.Parse(outputAsString);        
+        return int.Parse(outputAsString);
     }
 
     public static int GetLineOutputWithWords(string line)
     {
-        var digitWords = new Dictionary<string, int> 
+        var digitWords = new Dictionary<string, int>
         {
             {"one", 1 },
             {"two", 2 },
@@ -81,7 +73,7 @@ class Day1
             }
 
             buffer += line[i];
-            foreach(KeyValuePair<string, int> word in digitWords)
+            foreach (KeyValuePair<string, int> word in digitWords)
             {
                 if (buffer.Contains(word.Key))
                 {

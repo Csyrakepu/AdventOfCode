@@ -11,7 +11,7 @@ class Day5
         string[] commands = inputParts[1].Split("\r\n");
 
         Stack[] stacks = ConvertStacks(stacksInput);
-        
+
         foreach (string command in commands)
         {
             int[] commandParameters = ConvertCommand(command);
@@ -80,7 +80,7 @@ class Day5
             }
 
         }
-        
+
         return result.ToArray();
 
     }
@@ -90,7 +90,7 @@ class Day5
         string[] stringStacks = ConvertStacksToStringArray(unformattedInput);
         List<Stack> result = new List<Stack>();
 
-        
+
         foreach (string stack in stringStacks)
         {
             char lastCharacter = stack[^1];
@@ -150,7 +150,7 @@ class Day5
     static string GetTopElements(Stack[] stacks)
     {
         string output = "";
-        foreach(Stack stack in stacks)
+        foreach (Stack stack in stacks)
         {
             char topCrate = stack.crates[0];
             output += topCrate;
@@ -175,9 +175,9 @@ class Stack
 
 
     public static void MoveCrates(int count, Stack source, Stack target)
-    {       
+    {
         for (int i = 0; i < count; i++)
-        {                        
+        {
             target.crates = source.crates[0] + target.crates;
             source.crates = source.crates[1..];
         }

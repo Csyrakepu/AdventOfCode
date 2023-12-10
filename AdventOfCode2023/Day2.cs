@@ -1,11 +1,4 @@
-﻿using AdventOfCode2022;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-
+﻿namespace AdventOfCode2023;
 class Day2
 {
     public static int Part1()
@@ -21,7 +14,7 @@ class Day2
             Game game = new Game(id, subsets);
             sum += game.GetScore();
         }
-        
+
         return sum;
     }
 
@@ -59,7 +52,7 @@ class Day2
 
             Subset current = new Subset(redCount, greenCount, blueCount);
             subsets.Add(current);
-        }       
+        }
         return subsets;
     }
 
